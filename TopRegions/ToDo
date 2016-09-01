@@ -1,0 +1,22 @@
+x1. Alphabetize regions within a popularity
+x2. Display photos(from database only) in a region
+3. Use CoreData only even for recents
+x4. Thumbnail(store in CoreData)
+x5. iPad, xiPhone portrait and landscape
+
+How do I fetch photos from the database?
+    -First query database to find all photos within a region
+    -Get all those photos then show the title
+    -If I want to show them then just use the unique to query flickr
+    
+Notes: I can query CoreData in a TVC.  It doesn't violate MVC.
+
+How to do it:
+    Segue:
+        Looks like I'll have to make a query to CoreData and make a new fetch results controller. In the class that I'm segueing too.
+
+        I've stored the region name for each photo.  I just have to match the region name of the selected cell with the photo in the database. I will then store each photo an array which is passed to the photos tvc.  I don't think this tvc needs to know anything about CoreData
+    
+3. Set a date property for when photo was viewed in tableview in prepare for segue.  In recents I will query the database for photos with a view date and order them by that date and only fetch 20.
+
+5.  Look back at how this was done previously.
